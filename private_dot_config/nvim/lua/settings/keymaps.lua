@@ -15,6 +15,7 @@ vim.keymap.set("n", "<C-p>", builtin.find_files, opts)
 vim.keymap.set("n", "<C-o>", builtin.oldfiles, opts)
 vim.keymap.set("n", "<C-l>", builtin.live_grep, opts)
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, opts)
+vim.keymap.set("n", "<leader>gs", builtin.git_status, opts)
 
 -- Oil
 vim.keymap.set("n", "<C-{>", "<cmd> Oil<CR>", opts)
