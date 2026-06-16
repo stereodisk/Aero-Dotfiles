@@ -1,10 +1,9 @@
--- @UI
 vim.pack.add({
+	-- @UI
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
 	{ src = "https://github.com/shaunsingh/nord.nvim" },
 	{ src = "https://github.com/echasnovski/mini.icons" },
-	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
 
 	-- @LSP
 	-- completions LuaSnip
@@ -35,9 +34,10 @@ vim.pack.add({
 
 	-- Parser & Search
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
-	{ src = "https://github.com/chrisgrieser/nvim-rip-substitute" },
+
+	-- Notes
+	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
 })
 
 require("manager.commands")
@@ -54,12 +54,19 @@ require("plugins.lsp.LSP_Engine.conform")
 require("plugins.lsp.Completions_Engine.nvim_cmp")
 
 -- Utils
+
+-- Misc
 require("plugins.utils.Misc.icons")
 require("plugins.utils.Misc.autopairs")
 require("plugins.utils.Misc.colorizer")
 require("plugins.utils.Notify.fidget")
 require("plugins.utils.Notify.telescope_select")
+
+-- Parser
 require("plugins.utils.Parser.treesitter")
-require("plugins.utils.Notes.render_markdown")
+
+-- Search
 require("plugins.utils.Search.oil")
-require("plugins.utils.Search.rip-substitute")
+
+-- Notes
+require("plugins.utils.Notes.render_markdown")
