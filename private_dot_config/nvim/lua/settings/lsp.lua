@@ -105,8 +105,22 @@ local servers_config = {
 			gopls = {
 				completeUnimported = true,
 				usePlaceholders = true,
+				semanticTokens = true,
 				analyses = {
 					unusedparams = true,
+					shadow = true,
+					unusedwrite = true,
+					useany = true,
+				},
+				staticcheck = true,
+				hints = {
+					parameterNames = true,
+					assignVariableTypes = false,
+					compositeLiteralFields = true,
+					compositeLiteralTypes = true,
+					constantValues = true,
+					functionTypeParameters = true,
+					rangeVariableTypes = false,
 				},
 			},
 		},

@@ -20,11 +20,17 @@ require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
-		go = { "gofumpt", "goimports", "golines" },
+		go = { "goimports", "golines" },
 		c = { "clang_format" },
 		cpp = { "clang_format" },
 		javascript = { "prettier" },
 		typescript = { "prettier" },
+	},
+
+	formatters = {
+		golines = {
+			prepend_args = { "--base-formatter=gofumpt" },
+		},
 	},
 
 	format_on_save = function(bufnr)
