@@ -26,7 +26,7 @@ vim.pack.add({
 
 	-- @UTILS
 	{ src = "https://github.com/windwp/nvim-autopairs" },
-	{ src = "https://github.com/norcalli/nvim-colorizer.lua" },
+	{ src = "https://github.com/catgoose/nvim-colorizer.lua" },
 	{ src = "https://github.com/j-hui/fidget.nvim" },
 	{ src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" },
 	{ src = "https://github.com/nvim-telescope/telescope.nvim" },
