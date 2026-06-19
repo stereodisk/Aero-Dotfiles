@@ -1,4 +1,3 @@
--- Treesitter (nueva API)
 local install = require("nvim-treesitter.install")
 
 install.prefer_git = true

@@ -28,7 +28,7 @@ vim.opt.virtualedit = "block"
 -- replace split
 vim.opt.inccommand = "split"
 
--- autoread
+-- autoread changes
 vim.o.autoread = true
 
 -- cmdline
@@ -38,13 +38,25 @@ vim.opt.signcolumn = "yes"
 -- inlay_hint
 vim.lsp.inlay_hint.enable(true)
 
--- undofile
+-- undofile/undodir
 vim.opt.undofile = true
 local undodir = vim.fn.expand("~/.config/nvim/undodir")
 if vim.fn.isdirectory(undodir) == 0 then
 	vim.fn.mkdir(undodir, "p")
 end
 vim.opt.undodir = undodir
+
+-- spell checker/wrapping in txt/md
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "markdown", "text" },
+	callback = function()
+		vim.opt_local.spell = true
+		vim.opt_local.spelllang = { "es", "en" } -- español/english
+		vim.opt_local.wrap = true
+		vim.opt_local.linebreak = true
+		vim.opt_local.breakindent = true
+	end,
+})
 
 -- undotree
 vim.cmd("packadd nvim.undotree")
