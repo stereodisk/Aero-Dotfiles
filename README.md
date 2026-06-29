@@ -2,55 +2,58 @@
   My personal dotfiles
 </h1>
 
-Una configuración minimalista para Sway WM enfocada en la estética **Frutiger Aero / Aqua Crystal**
+A minimalist configuration for SwayFX WM focused on the **Frutiger Aero / Aqua Crystal** aesthetic.
 
 ---
 <img width="1920" height="1080" alt="Desktop" src="https://github.com/user-attachments/assets/a50b3239-3629-4ab7-8acf-5f5bf113fc32" />
 
 ---
 
-## Componentes Principales
-*   **WM:** Sway (Wayland)
-*   **Barra:** Waybar (transparente con gradientes)
-*   **Terminal:** Foot (IBM Plex Mono)
+## Components
+*   **WM:** SwayFX (Wayland)
+*   **Bar:** Waybar (transparent with glass gradients)
+*   **Terminal:** Foot (GeistMono Nerd Font)
 *   **Shell:** Fish (Eza, Zoxide, Fzf)
-*   **Lanzador:** Fuzzel (minimalista)
-*   **Navegador:** Zen Browser
-*   **Explorador de Archivos:** Nautilus (GTK4)
-*   **Notificaciones:** Mako
+*   **Launcher:** Fuzzel
+*   **Browser:** Zen Browser
+*   **File Manager:** Nautilus (GTK4)
+*   **Notifications:** Mako
 *   **Widgets:** Eww (cat, senna, fortune)
+*   **Lock screen:** Swaylock-effects
+*   **Power menu:** Wlogout
 
-## Instalación
-Se utiliza **chezmoi** para gestionar la configuración, para ello sigue estos pasos:
+## Installation
+**chezmoi** is used to manage the configuration:
 
-1.  **Instalar chezmoi:**
+1.  **Install chezmoi:**
     ```bash
     sh -c "$(curl -fsLS get.chezmoi.io)"
     ```
-2.  **Aplicar dotfiles:**
+2.  **Apply dotfiles:**
     ```bash
     chezmoi init --apply https://github.com/tu-usuario/dotfiles.git
     ```
-3.  **Instalar dependencias:**
-    El script se ejecutará automáticamente tras el primer `chezmoi apply`, o puedes lanzarlo manualmente:
+3.  **Install dependencies:**
+    The script runs automatically after the first `chezmoi apply`, or manually:
     ```bash
     ~/.local/share/chezmoi/run_once_install-dependencies.sh
     ```
 
-## Atajos Principales
+## Keybinds
 Super = ⊞
-*   `Super + T` -> Abrir Terminal (Foot)
-*   `Super + F` -> Abrir Navegador (Zen)
-*   `Super + D` -> Abrir Archivos (Nautilus)
-*   `Super + A` -> Lanzador de Apps (Fuzzel)
-*   `Super + Esc` -> Bloquear pantalla (Swaylock-effects)
-*   `Super + Q` -> Cerrar ventana activa
-*   `Super + Shift + C` -> Recargar Sway
-*   `Print` -> Captura de pantalla completa
-*   `Super + Shift + S` -> Captura de área (slurp)
+*   `Super + T` → Open terminal (Foot)
+*   `Super + F` → Open browser (Zen)
+*   `Super + D` → Open files (Nautilus)
+*   `Super + A` → App launcher (Fuzzel)
+*   `Super + Esc` → Lock screen (Swaylock)
+*   `Super + Shift + E` → Power menu (Wlogout)
+*   `Super + Q` → Close window
+*   `Super + Shift + C` → Reload SwayFX
+*   `Print` → Full screenshot
+*   `Super + Shift + S` → Area screenshot (slurp)
 
-## Temas
+## Theming
 *   **GTK:** Windows Longhorn Plex
-*   **Iconos:** Adwaita / Papirus
-*   **Cursores:** Phinger Cursors Dark
-*   **Fuentes:** IBM Plex Mono / IBM Plex Sans
+*   **Icons:** Adwaita / Papirus
+*   **Cursors:** Phinger Cursors Dark
+*   **Fonts:** Inter Variable / GeistMono Nerd Font
