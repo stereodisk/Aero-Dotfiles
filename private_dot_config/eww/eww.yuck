@@ -1,4 +1,4 @@
-(defpoll quote :interval "1m" "fortune -s")
+(defpoll quote :interval "1m" "~/.config/eww/scripts/fortune.sh")
 
 (defwidget image_cat []
   (box :class "image-box"
@@ -10,9 +10,9 @@
 
 (defwidget fortune_widget []
   (box :class "fortune-box"
-    (label :text quote 
-           :limit-width 150 
-           :wrap true 
+    (label :text quote
+           :limit-width 55
+           :wrap true
            :justify "left")))
 
 (defwindow cat_win
@@ -33,7 +33,7 @@
 
 (defwindow fortune_win
   :monitor 0
-  :geometry (geometry :x "60px" :y "60px" :width "600px" :height "150px" :anchor "bottom left")
+  :geometry (geometry :x "60px" :y "60px" :width "400px" :height "100px" :anchor "bottom left")
   :stacking "bg"
   :windowtype "desktop"
   :wm-ignore true
