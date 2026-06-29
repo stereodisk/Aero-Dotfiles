@@ -7,6 +7,6 @@ include ~/.config/sway/bar/*
 include ~/.config/sway/windows/*
 
 # Extras
-include ~/.config/sway/wallpaper/*
+include ~/.config/sway/wallpaper/wallpaper.conf
 include ~/.config/sway/keybinds/*
 include /etc/sway/config.d/*
