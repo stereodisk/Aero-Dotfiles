@@ -5,7 +5,7 @@
 A minimalist configuration for SwayFX WM focused on the **Frutiger Aero / Aqua Crystal** aesthetic.
 
 ---
-<img width="1920" height="1080" alt="Desktop" src="https://github.com/user-attachments/assets/a50b3239-3629-4ab7-8acf-5f5bf113fc32" />
+<img width="1920" height="1080" alt="rice" src="https://github.com/user-attachments/assets/80fc8e37-b496-4822-b5d8-11c95a3be593" />
 
 ---
 
