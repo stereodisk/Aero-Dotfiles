@@ -1,0 +1,30 @@
+{
+    "label" : "lock",
+    "action" : "bash ~/.config/sway/scripts/lock.sh",
+    "text" : "Bloquear",
+    "keybind" : "l"
+}
+{
+    "label" : "suspend",
+    "action" : "systemctl suspend",
+    "text" : "Suspender",
+    "keybind" : "u"
+}
+{
+    "label" : "logout",
+    "action" : "swaymsg exit",
+    "text" : "Salir",
+    "keybind" : "e"
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "Reiniciar",
+    "keybind" : "r"
+}
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : "Apagar",
+    "keybind" : "s"
+}
