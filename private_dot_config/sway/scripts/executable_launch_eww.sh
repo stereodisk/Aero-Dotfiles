@@ -1,6 +1,7 @@
 #!/bin/sh
+eww kill 2>/dev/null || pkill -x eww 2>/dev/null || true
+sleep 0.3
 
-pkill -x eww || true
 eww daemon
 
 for i in $(seq 1 10); do

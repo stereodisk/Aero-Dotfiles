@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Screenshot script for Frutiger Aero theme
+# Usage: ./screenshot.sh [full|selection]
+
 mkdir -p ~/Pictures/Screenshots
 
 case $1 in

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Volume and Mic control
+# Volume and Mic control for Frutiger Aero theme
 
 case $1 in
     up)
@@ -25,8 +25,10 @@ MIC_STATUS=$(pamixer --default-source --get-mute)
 if [[ "$1" == "mic-mute" ]]; then
     if [[ "$MIC_STATUS" == "true" ]]; then
         notify-send -a "System" "Micrófono" -h string:x-dunst-stack-tag:mic -u low "Silenciado  "
+        brightnessctl -d "platform::micmute" set 0
     else
         notify-send -a "System" "Micrófono" -h string:x-dunst-stack-tag:mic -u low "Activo "
+        brightnessctl -d "platform::micmute" set 1
     fi
 else
     if [[ "$MUTE_STATUS" == *"yes"* ]]; then

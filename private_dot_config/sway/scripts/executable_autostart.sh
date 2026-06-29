@@ -31,4 +31,8 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Windows Longhorn Plex'
 gsettings set org.gnome.desktop.interface color-scheme 'default'
 
 # Misc
-brightnessctl -d "platform::micmute" set 0
+if [[ "$(pamixer --default-source --get-mute)" == "true" ]]; then
+    brightnessctl -d "platform::micmute" set 0
+else
+    brightnessctl -d "platform::micmute" set 1
+fi

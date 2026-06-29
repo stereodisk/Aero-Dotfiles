@@ -22,7 +22,7 @@ swaylock \
     --inside-wrong-color "FF6B6B22" \
     --inside-clear-color "FFFFFF11" \
     --separator-color "00000000" \
-    --font "IBM Plex Sans" \
+    --font "Inter Variable" \
     --datestr "%A, %d de %B" \
     --timestr "%H:%M" \
     --indicator-caps-lock \
