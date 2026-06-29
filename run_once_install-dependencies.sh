@@ -32,7 +32,7 @@ sudo systemctl enable --now tlp
 # @Fuentes
 print_step "Instalando Fuentes..."
 sudo pacman -S --needed --noconfirm \
-    ttf-ibm-plex \
+    ttf-inter \
     ttf-liberation \
     noto-fonts noto-fonts-cjk noto-fonts-emoji \
     ttf-nerd-fonts-symbols-mono
@@ -48,10 +48,11 @@ sudo pacman -S --needed --noconfirm \
     nodejs npm \
     jdk-openjdk
 
-# @Entorno de Ventanas (Sway)
-print_step "Instalando Sway y componentes de interfaz..."
+# @Entorno de Ventanas (SwayFX)
+print_step "Instalando SwayFX y componentes de interfaz..."
+yay -S --needed --noconfirm swayfx
 sudo pacman -S --needed --noconfirm \
-    sway swaybg swayidle waybar fuzzel mako \
+    swaybg swayidle waybar fuzzel mako \
     xorg-xwayland wl-clipboard polkit-gnome \
     grim slurp swappy \
     brightnessctl papirus-icon-theme
@@ -86,6 +87,7 @@ yay -S --needed --noconfirm \
     phinger-cursors \
     gtk-engine-murrine \
     wlogout \
+    ttf-geist-mono-nerd \
     obsidian
 
 # Shell
