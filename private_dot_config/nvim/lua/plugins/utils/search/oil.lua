@@ -1,10 +1,10 @@
 require("oil").setup({
-	default_file_explorer = true,
+	default_file_explorer = false, -- fallback to :Explore
 	use_default_keymaps = true,
 	view_options = {
 		show_hidden = true,
 		is_always_hidden = function(name, _)
-			-- Verifica si termina en .class o .pyc
+			-- .class or .pyc
 			return name:match("%.class$") or name:match("%.pyc$")
 		end,
 	},

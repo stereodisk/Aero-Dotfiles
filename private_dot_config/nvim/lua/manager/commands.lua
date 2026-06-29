@@ -1,5 +1,28 @@
 -- @Pack Commands
 
+-- @Pack build hooks - vim.pack has no `build = "make"` field like lazy.nvim,
+-- so plugins needing a compile step are rebuilt here on install/update.
+-- Built synchronously (:wait()) so the .so exists before it's loaded later
+-- in this same startup.
+local build_on_change = {
+	["telescope-fzf-native.nvim"] = { "make" },
+}
+
+vim.api.nvim_create_autocmd("PackChanged", {
+	callback = function(ev)
+		local data = ev.data
+		local cmd = build_on_change[data.spec.name]
+		if cmd and (data.kind == "install" or data.kind == "update") then
+			local res = vim.system(cmd, { cwd = data.path }):wait()
+			local ok = res.code == 0
+			vim.notify(
+				("[pack] build %s for %s"):format(ok and "OK" or "FAILED", data.spec.name),
+				ok and vim.log.levels.INFO or vim.log.levels.ERROR
+			)
+		end
+	end,
+})
+
 -- @Pack add
 vim.api.nvim_create_user_command("PackAdd", function(opts)
 	vim.pack.add(opts.fargs)

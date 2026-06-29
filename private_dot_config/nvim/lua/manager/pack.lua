@@ -1,3 +1,7 @@
+-- manager.commands registers the PackChanged build-hook autocmd; must run
+-- before vim.pack.add() so the "install" event isn't missed.
+require("manager.commands")
+
 vim.pack.add({
 	-- @UI
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
@@ -25,48 +29,52 @@ vim.pack.add({
 	{ src = "https://github.com/L3MON4D3/LuaSnip", version = "v2.5.0" },
 
 	-- @UTILS
+	-- Misc
 	{ src = "https://github.com/windwp/nvim-autopairs" },
 	{ src = "https://github.com/catgoose/nvim-colorizer.lua" },
-	{ src = "https://github.com/j-hui/fidget.nvim" },
-	{ src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" },
+
+	-- Parser
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+
+	-- Search
+	-- Oil
+	{ src = "https://github.com/stevearc/oil.nvim" },
+
+	-- Telescope
 	{ src = "https://github.com/nvim-telescope/telescope.nvim" },
 	{ src = "https://github.com/nvim-lua/plenary.nvim" },
-
-	-- Parser & Search
-	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-	{ src = "https://github.com/stevearc/oil.nvim" },
+	{ src = "https://github.com/nvim-telescope/telescope-frecency.nvim" },
+	{ src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" },
+	{ src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim" },
 
 	-- Notes
 	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
+	{ src = "https://github.com/f3fora/cmp-spell" },
 })
 
-require("manager.commands")
-
 -- @REQUIRES
--- UI
-require("plugins.UI.gitsigns")
-require("plugins.UI.lualine")
-require("plugins.UI.nord")
+-- @UI
+require("plugins.ui.gitsigns")
+require("plugins.ui.lualine")
+require("plugins.ui.icons")
+require("plugins.ui.nord")
 
--- LSP & Snippets
-require("plugins.lsp.LSP_Engine.mason")
-require("plugins.lsp.LSP_Engine.conform")
-require("plugins.lsp.Completions_Engine.nvim_cmp")
+-- @LSP
+require("plugins.lsp.engine.mason")
+require("plugins.lsp.engine.conform")
+require("plugins.lsp.completions.nvim_cmp")
 
--- Utils
-
+-- @UTILS
 -- Misc
-require("plugins.utils.Misc.icons")
-require("plugins.utils.Misc.autopairs")
-require("plugins.utils.Misc.colorizer")
-require("plugins.utils.Notify.fidget")
-require("plugins.utils.Notify.telescope_select")
+require("plugins.utils.misc.autopairs")
+require("plugins.utils.misc.colorizer")
 
 -- Parser
-require("plugins.utils.Parser.treesitter")
+require("plugins.utils.parser.treesitter")
 
 -- Search
-require("plugins.utils.Search.oil")
+require("plugins.utils.search.oil")
+require("plugins.utils.search.telescope")
 
 -- Notes
-require("plugins.utils.Notes.render_markdown")
+require("plugins.utils.notes.render_markdown")

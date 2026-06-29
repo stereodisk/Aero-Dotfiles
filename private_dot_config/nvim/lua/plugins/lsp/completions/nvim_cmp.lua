@@ -37,6 +37,21 @@ cmp.setup({
 		{ name = "nvim_lsp" }, -- cmp-nvim-lsp
 	}, {
 		{ name = "buffer" }, -- Attached to the current buffer
+		{
+			name = "spell", -- cmp-spell
+			option = {
+				keep_all_entries = false,
+				preselect_correct_word = true,
+				enable_in_context = function()
+					local buf = vim.api.nvim_get_current_buf()
+					local ok, parser = pcall(vim.treesitter.get_parser, buf)
+					if not ok or not parser then
+						return true
+					end
+					return require("cmp.config.context").in_treesitter_capture("spell")
+				end,
+			},
+		},
 	}),
 
 	-- Sources for snippets

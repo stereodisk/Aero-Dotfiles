@@ -1,10 +1,6 @@
 ---@return string|osdate
-local function get_datetime_if_fullscreen()
-	if vim.o.lines >= 41 then
-		return os.date("%I:%M%p")
-	else
-		return ""
-	end
+local function get_datetime()
+	return os.date("%I:%M%p")
 end
 
 vim.api.nvim_del_mark("M")
@@ -82,9 +78,9 @@ require("lualine").setup({
 		-- datetime
 		lualine_z = {
 			{
-				get_datetime_if_fullscreen,
+				get_datetime,
 			},
 		},
 	},
-	extensions = { "mason", "lazy", "oil" },
+	extensions = { "mason", "oil", "quickfix", "man" },
 })
